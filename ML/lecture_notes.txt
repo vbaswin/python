@@ -1,0 +1,163 @@
+1. SUPERVISED LEARNING:
+    if the output column is given at the start
+
+2. UNSUPERVISED LEARNING:
+    ~> in the given date set output column is not there
+    ~> we will generate a structure or pattern. 
+    ~> we won't predict but a pattern or structure from the input data
+       column  
+
+
+1.
+eg: housing price prediction
+    "Regression" type :- (predict continuous) - not sure the quantity it
+    either keeps on varying with respect to time (increase or decrease)
+    Valued output
+    
+    "classification" type :- Breast cancer -  as here there is only two inputs 
+    ie; malignant 1 and benign 2 
+    ie; all the values will be classes like 0 or 1 / 1 2 3 4  / A or B
+
+2. 
+eg: google news  
+
+organize computing clusters
+social network analysis
+market segmentation
+astronomical data analysis
+
+======================================================================
+
+LINEAR REGRESSION
+=================
+
+MODEL REPRESENTATION
+-------------------- 
+
+housing price 
+ 
+for majority of population as size increases the price also increases 
+- so linear regression 
+
+Notation 
+m   => Number of training examples
+x's => "input" variable / feature
+y's => "output" variable / "target" variable
+n   => no of features / inputs of coulmns here 'size' 
+
+Size in feet² (x) | Price ($) in 1000's (y)
+2104                460
+1416                232 
+1534                315
+852                 178
+
+
+(x², y²) = (1416, 232)  iᵗʰ term
+
+- not ideal to use only one feature here just for explanation only 
+
+
+
+                Training set
+                    |
+                Learning Algorithm
+                    |
+size of  -----> hypothesis(h) ----> estimated price 
+house 
+
+
+
+y = mx +  c,    c -> intercept with y-axis 
+                m -> slope 
+    |     |
+h = (Θ₁x) + (Θ₀)    => equation for linar regression uni variable -> #
+      |       |
+    bias    weigth - varies 
+      |
+constant ie; always 1
+
+
+
+h = Θ₀ + Θ₁x + Θ₂x + :- with increasing no of weight we need to increase 
+                        also 
+
+
+
+COST FUNCTION 
+-------------
+
+loss
+4
+Σ   (h_Θ (x^i - y^i)^2  - last square to avoid negative 
+i = 1
+
+
+sum of all the losses - cost function 
+mean square error 
+
+              m
+J(Θ) = (1/2m) Σ   (h_Θ (x^i - y^i)^2   >>===>> COST FUNCTION 
+              i = 1
+
+J - should be as small as possible for making the best model 
+m - should not be changed 
+y - we cannot change the values in the output column so cannot be changed
+x - cannot same as y 
+Θ - The only parameter in the data set that can be change because we are 
+    deciding it 
+h - changes with respect to # look above eqn 
+
+
+
+GRADIENT DESCENT ALGORITHM - to not need to find the line for every point
+--------------------------
+
+Θ_j = Θ_j - α d(J(Θ))
+              dθ
+
+
+to avoid 
+1. slow learning when α is very small
+2. cross oversuit when α is very large  
+
+
+
+1. Hypothesis representation
+2. Cost function 
+3. Gradient descent   
+
+
+FEATURE SCALING 
+
+Idea: Make sure features are on a similar scale.
+ie; size(2000 ft^2) and no of bedrooms (1-5) here it is possible for 
+the algorithm to give importance to larger value so we use feature scaling
+
+ so we divide each value of a feature with its average so it will will 
+ 2 - digits 
+
+ mean normalization => 
+
+ size - mean 
+ -----------
+    average 
+
+
+
+==========================================================================
+
+1. from Scatch 
+
+model file and test file 
+model file 
+
+    1 fit() - x and y of test 
+    finding values of parameters with Gradient
+    Descent Alge. (thetas)
+
+    2. predict() - x only 
+    hypothesis 
+
+split the data set into training and testing data 
+
+x-test          y-test 
